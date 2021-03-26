@@ -31,7 +31,9 @@ class Gui:
     def new(self):
         
         self.font = 'Fonts/ClearSans-Medium.ttf'
-        #self.title_font = pygame.freetype.Font(self.font, size=85)
+        self.title_font = pygame.freetype.Font(self.font, size=40)
+        self.score_font = pygame.freetype.Font(self.font, size=23)
+        self.box_font = pygame.freetype.Font(self.font, size=25)
         self.start_time = 0
         
     def run(self):
@@ -54,7 +56,6 @@ class Gui:
             self.game.call_move(predictor.solve())
             
             self.start_time = time.time()
-            
 
     def draw(self):
 
@@ -62,16 +63,20 @@ class Gui:
             return
         
         self.screen.fill(self.theme['background'])
-        #title_font = pygame.font.Font(self.font, 80)
         
-        '''Fix rendering text'''
-        #render_ = self.title_font.render("2048 Game", fgcolor=Color['text'])
-        
-        #self.screen.blit(render,(WIDTH//2 - render.get_width()//2,100))
+        render_, renderrect_= self.title_font.render("2048 Game", fgcolor=self.theme['title-text'])        
+        self.screen.blit(render_,(WIDTH//2 - render_.get_width()//2 - 100, 62))
         
         # Draw main frame
         main_frame_rect = ((WIDTH-450)//2,120,450,450)
         AAfilledRoundedRect(self.screen, main_frame_rect, self.theme['frame1'], 0.05)
+        
+        # Draw score frame
+        score_frame = (320,55,175,40)
+        AAfilledRoundedRect(self.screen, score_frame, self.theme['frame1'], 0.2)
+        # Draw score
+        render_, renderrect_= self.score_font.render(str(self.game.score), fgcolor=self.theme['background'])        
+        self.screen.blit(render_,(175//2 + 320 - render_.get_width()//2, 40//2 + 55 - render_.get_height() + 8))
 
         # Draw tiles
         for i in range(4):
@@ -83,6 +88,11 @@ class Gui:
                 if self.game.board[i][j] != 0:
                     rect = (main_frame_rect[0]+(SPACING*(j+1))+(TILESIZE*j), main_frame_rect[1]+(SPACING*(i+1))+(TILESIZE*i), TILESIZE, TILESIZE)
                     AAfilledRoundedRect(self.screen, rect, self.theme[self.game.board[i][j]], 0.1)
+                    
+                    # Draw (value) text on box
+                    # Draw score
+                    render_, renderrect_ = self.score_font.render(str(self.game.board[i][j]), fgcolor=self.theme['box-text'])        
+                    self.screen.blit(render_,(rect[0]+(TILESIZE//2) - (render_.get_width()//2),rect[1]+(TILESIZE//2) - (render_.get_height()//2)))
 
         pygame.display.flip()
 

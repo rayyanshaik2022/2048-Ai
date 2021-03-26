@@ -23,6 +23,9 @@ class Ui_test(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.horizontalSlider_2 = QtWidgets.QSlider(test)
         self.horizontalSlider_2.setGeometry(QtCore.QRect(20, 120, 160, 22))
         self.horizontalSlider_2.setMinimum(1)
@@ -47,6 +50,9 @@ class Ui_test(object):
         self.comboBox.setItemText(0, _translate("test", "Default"))
         self.comboBox.setItemText(1, _translate("test", "Tokyo Night"))
         self.comboBox.setItemText(2, _translate("test", "Tortoise"))
+        self.comboBox.setItemText(3, _translate("test", "Dracula"))
+        self.comboBox.setItemText(4, _translate("test", "Empty"))
+        self.comboBox.setItemText(5, _translate("test", "Empty"))
         self.label.setText(_translate("test", "Delay"))
         self.label_2.setText(_translate("test", "Simulations"))
     
@@ -55,7 +61,10 @@ class Ui_test(object):
         delay = self.horizontalSlider.value()/20
         simulations = self.horizontalSlider_2.value()
         theme = self.comboBox.currentText()
-        print(theme)
+        
+        if theme == "Empty":
+            theme = "Default"
+
         # create the game object
         g = gui.Gui(gui.Game(), delay, simulations, theme)
         g.new()

@@ -10,7 +10,8 @@ THEMES = {
         "background" : Color("#FAF8EF"),
         "frame1" : Color("#BBADA0"),
         "frame2" : Color("#CDC1B4"),
-        "text" : Color("#756e66"),
+        "title-text" : Color("#756e66"),
+        "box-text" : Color("#3c3a32"),
         2 :  Color("#EEE4DA"),
         4 : Color("#EEE1C9"),
         8 : Color("#F3B27A"),
@@ -22,13 +23,14 @@ THEMES = {
         512 : Color("#f5cb42"),
         1024 : Color("#edc53f"),
         2048 : Color("#edc22e"),
-        4096 : Color("#3c3a32")
+        4096 : Color("#3c3a32"),
     },
     "tokyo night" : {
         "background" : Color("#a5add0"),
         "frame1" : Color("#1a1b26"),
         "frame2" : Color("#1e202e"),
-        "text" : Color("#756e66"),
+        "title-text" : Color("#1e202e"),
+        "box-text" : Color("#edf2fa"),
         2 :  Color("#b796f1"),
         4 : Color("#a476f5"),
         8 : Color("#8eaded"),
@@ -46,7 +48,8 @@ THEMES = {
         "background" : Color("#5c6e74"),
         "frame1" : Color("#394548"),
         "frame2" : Color("#455257"),
-        "text" : Color("#756e66"),
+        "title-text" : Color("#455257"),
+        "box-text" : Color("#edf2fa"),
         2 :  Color("#9dc97b"),
         4 : Color("#82b45b"),
         8 : Color("#86d44a"),
@@ -59,6 +62,25 @@ THEMES = {
         1024 : Color("#7f69cf"),
         2048 : Color("#7659e3"),
         4096 : Color("#f05959")
+    },
+    "dracula" : {
+        "background" : Color("#546898"),
+        "frame1" : Color("#394548"),
+        "frame2" : Color("#353745"),
+        "title-text" : Color("#353745"),
+        "box-text" : Color("#edf2fa"),
+        2 :  Color("#d678b0"),
+        4 : Color("#ed5fb4"),
+        8 : Color("#9e8ad8"),
+        16 : Color("#8e6ded"),
+        32 : Color("#72d47d"),
+        64 : Color("#53ed64"),
+        128 : Color("#9be2f8"),
+        256 : Color("#62d2f5"),
+        512 : Color("#e9b172"),
+        1024 : Color("#f5a347"),
+        2048 : Color("#f0f293"),
+        4096 : Color("#f4f760")
     }
 }
 
