@@ -6,11 +6,11 @@ from rounded_rect import *
 from game import Game
 import time
 from montecarlo import MonteCarlo
+import os
 
 from copy import deepcopy
 
 AUTO = True
-delay = 0.001
 
 class Gui:
     def __init__(self, game, delay, simulations, theme):
@@ -30,10 +30,11 @@ class Gui:
         
     def new(self):
         
-        self.font = 'Fonts/ClearSans-Medium.ttf'
-        self.title_font = pygame.freetype.Font(self.font, size=40)
-        self.score_font = pygame.freetype.Font(self.font, size=23)
-        self.box_font = pygame.freetype.Font(self.font, size=25)
+        self.font = 'Arial'
+        
+        self.title_font = pygame.freetype.SysFont(self.font, size=40)
+        self.score_font = pygame.freetype.SysFont(self.font, size=23)
+        self.box_font = pygame.freetype.SysFont(self.font, size=25)
         self.start_time = 0
         
     def run(self):

@@ -4,7 +4,6 @@ import numpy as np
 from copy import deepcopy
 
 MOVES = ['up','down','left','right']
-SIMULATIONS = 30 # simulations per move
 
 class MonteCarlo:
     
@@ -19,7 +18,7 @@ class MonteCarlo:
         for i, move in enumerate(MOVES):
             for c in range(self.simulations):
                 simulation = Game()
-                simulation.board = [row[:] for row in self.original_board] #deepcopy(self.original_board)
+                simulation.board = [row[:] for row in self.original_board] # deepcopy(self.original_board)
                 simulation.call_move(move)
                 
                 while not simulation.is_loss():

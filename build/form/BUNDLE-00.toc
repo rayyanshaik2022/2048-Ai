@@ -1,0 +1,3 @@
+([('form',
+   '/Users/rayyanshaik/Desktop/Programming/Python/2048 Game/2048-Ai/dist/form',
+   'EXECUTABLE')],)
