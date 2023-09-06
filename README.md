@@ -1,5 +1,9 @@
 # 2048-Ai
 
+## Images
+File size is too large.
+Click [here](https://rayyanshaik.com/images/2048-demo2.gif) to view the [gif](https://rayyanshaik.com/images/2048-demo2.gif)
+
 ## Running the Application (Mac only)
 - Within this repository, under `\dist`, there is a `.app` file named: `2048 AI`. On a Mac computer, this file alone can be downloaded and run.
 - Runtime Troubleshooting
